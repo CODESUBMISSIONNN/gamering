@@ -10,7 +10,7 @@
  * 4. this youtube guy
  * https://www.youtube.com/watch?v=hnUT83niszA
  *
- * @author Joshua Chen
+ * @author Joshua Chen, Aiden Ndreu
  * Last edited June 12, 2026
  */
 
@@ -134,8 +134,8 @@ public class splashscreen extends JFrame{
 
         //adds high scores
         highScore.add(getPjskHighscore());
-        highScore.add(0);
-        highScore.add(0);
+        highScore.add(getFlappyHighScore());
+        highScore.add(getPacManHighScore());
         highScore.add(getTaikoHighScore());
     }
 
@@ -164,6 +164,55 @@ public class splashscreen extends JFrame{
         }
         scanner.close();
         return 0;
+    }
+    /**
+     * Reads flappy_highscore.txt to get the high score from Flappy Bird
+     * (FlappyBird.java saves just the number to the file)
+     *
+     * @author Aiden Ndreu
+     * @return the high score
+     * @throws Exception
+     */
+    private static int getFlappyHighScore() throws Exception {
+        File file = new File("flappy_highscore.txt");
+        if (!file.exists()) {
+            return 0;
+        } // if file doesn't exist yet (first launch) the high score is 0
+
+        // reads high score. hasNextInt checks there is actually a
+        // number in the file so an empty file can't crash the hub
+        Scanner scanner = new Scanner(file);
+        int score = 0;
+        if (scanner.hasNextInt()) {
+            score = scanner.nextInt();
+        }
+        scanner.close();
+        return score;
+    }
+
+    /**
+     * Reads pacman_highscore.txt to get the high score from Pac-Man
+     * (PacMan.java saves just the number to the file)
+     *
+     * @author Aiden Ndreu
+     * @return the high score
+     * @throws Exception
+     */
+    private static int getPacManHighScore() throws Exception {
+        File file = new File("pacman_highscore.txt");
+        if (!file.exists()) {
+            return 0;
+        } // if file doesn't exist yet (first launch) the high score is 0
+
+        // reads high score. hasNextInt checks there is actually a
+        // number in the file so an empty file can't crash the hub
+        Scanner scanner = new Scanner(file);
+        int score = 0;
+        if (scanner.hasNextInt()) {
+            score = scanner.nextInt();
+        }
+        scanner.close();
+        return score;
     }
 
     /**
