@@ -1,0 +1,5 @@
+scrollSpeed=0.7
+offset=-50
+highScore=0
+totalPlays=1
+beatmapFile=level2.txt
