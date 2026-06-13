@@ -85,10 +85,16 @@ public class splashscreen extends JFrame{
             button.addActionListener(e -> {
                 if (gameName.equals("Pac-Man")){
                     dispose();
-                    PacMan.launch();
+                    try{
+                        PacMan.launch();
+                    }catch (Exception ex) {}
+
                 } else if (gameName.equals("Flappy Bird")){
                     dispose();
-                    FlappyBird.launch();
+                    try{
+                        FlappyBird.launch();
+                    }catch (Exception ex) {}
+
                 } else if(gameName.equals("Taiko")){
                     dispose();
                     try {
