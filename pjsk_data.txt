@@ -1,5 +1,5 @@
 scrollSpeed=0.8
 offset=0
-highScore=76801
-totalPlays=1
+highScore=0
+totalPlays=0
 beatmapFile=pjsk_level1.txt
